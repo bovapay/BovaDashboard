@@ -14,6 +14,8 @@ function currencySignSwitcher(currency: string) {
       return 'Rp';
     case 'usdt':
       return '₸';
+    case 'byn':
+      return 'Br';
     default:
       return '';
   }
