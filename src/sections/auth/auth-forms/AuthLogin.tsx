@@ -51,8 +51,8 @@ const AuthLogin = ({ isDemo = false }: { isDemo?: boolean }) => {
     <>
       <Formik
         initialValues={{
-          email: 'test@bova.pw',
-          password: '12345',
+          email: '',
+          password: '',
           submit: null
         }}
         validationSchema={Yup.object().shape({
@@ -70,7 +70,7 @@ const AuthLogin = ({ isDemo = false }: { isDemo?: boolean }) => {
             console.error(err);
             if (scriptedRef.current) {
               setStatus({ success: false });
-              setErrors({ submit: err.message });
+              setErrors({ submit: err.message ? err.message : err });
               setSubmitting(false);
             }
           }
@@ -156,7 +156,9 @@ const AuthLogin = ({ isDemo = false }: { isDemo?: boolean }) => {
               </Grid> */}
               {errors.submit && (
                 <Grid item xs={12}>
-                  <FormHelperText error>{errors.submit}</FormHelperText>
+                  <FormHelperText error>
+                    {errors.submit === 'Wrong Services' ? 'Неправильный email или пароль' : errors.submit}
+                  </FormHelperText>
                 </Grid>
               )}
               <Grid item xs={12}>

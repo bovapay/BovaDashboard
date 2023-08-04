@@ -3,6 +3,7 @@ import React from 'react';
 import { ReactComponent as GeIcon } from 'assets/icons/countries/ge.svg';
 import { ReactComponent as RuIcon } from 'assets/icons/countries/ru.svg';
 import { ReactComponent as IdIcon } from 'assets/icons/countries/id.svg';
+import { ReactComponent as ByIcon } from 'assets/icons/countries/by.svg';
 
 export default function CurrencyIconSwitcher({ currency, height }: { currency: string; height: number }) {
   const style = { height: height };
@@ -13,6 +14,8 @@ export default function CurrencyIconSwitcher({ currency, height }: { currency: s
       return <GeIcon style={style} />;
     case 'idr':
       return <IdIcon style={style} />;
+    case 'byn':
+      return <ByIcon style={style} />;
     default:
       return <></>;
   }
