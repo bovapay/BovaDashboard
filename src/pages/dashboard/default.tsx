@@ -30,7 +30,7 @@ const DashboardDefault = () => {
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
       {/* row 1 */}
       {/* <Finances /> */}
-      <Accounts />
+      <Accounts selectedCurrency={selectedCurrency} setCurrency={setCurrency} />
       <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
 
       {/* row 2 */}

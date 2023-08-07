@@ -20,6 +20,8 @@ import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons
 
 // types
 import { ThemeMode } from 'types/config';
+import { useDispatch } from 'store';
+import { userApi } from 'store/api/user/user.api';
 
 // types
 interface TabPanelProps {
@@ -52,6 +54,11 @@ function a11yProps(index: number) {
 const Profile = () => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function clearCache() {
+    dispatch(userApi.util.resetApiState());
+  }
 
   const { logout, user } = useAuth();
   const handleLogout = async () => {
@@ -62,6 +69,7 @@ const Profile = () => {
           from: ''
         }
       });
+      clearCache();
     } catch (err) {
       console.error(err);
     }

@@ -49,8 +49,16 @@ const reducers = combineReducers({
   [statsApi.reducerPath]: statsApi.reducer
 });
 
+const rootReducer = (state: any, action: any) => {
+  //clear state on log out
+  if (action.type === 'userApi/resetApiState') {
+    state = undefined;
+  }
+  return reducers(state, action);
+};
+
 const store = configureStore({
-  reducer: reducers,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
