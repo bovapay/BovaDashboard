@@ -119,11 +119,6 @@ const Transaction = () => {
                         <Typography sx={{ lineHeight: 1.8 }} color="secondary">
                           <CardNumberFormat value={data?.resipient_card.number} />
                         </Typography>
-                        {data?.customer_name && (
-                          <Typography sx={{ lineHeight: 1.8 }} color="secondary">
-                            {data?.customer_name}
-                          </Typography>
-                        )}
                       </FormControl>
                     </Stack>
                   </MainCard>
