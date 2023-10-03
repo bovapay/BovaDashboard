@@ -116,6 +116,8 @@ const Transactions = ({ isDisputesOnly }: { isDisputesOnly: boolean }) => {
             <TableRow>
               <TableCell>ID</TableCell>
               <TableCell>СУММА (Фиат)</TableCell>
+              <TableCell>Сумма, USDT</TableCell>
+              <TableCell>Зачислено</TableCell>
               <TableCell>ПОЛУЧАТЕЛЬ</TableCell>
               <TableCell>СТАТУСЫ</TableCell>
               <TableCell>ДАТА И ВРЕМЯ</TableCell>
@@ -127,6 +129,8 @@ const Transactions = ({ isDisputesOnly }: { isDisputesOnly: boolean }) => {
               <TableCell>
                 <AmountRangeQueryPicker />
               </TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
               <TableCell>
                 <ReceiverQueryFilter />
               </TableCell>

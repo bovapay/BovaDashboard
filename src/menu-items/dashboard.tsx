@@ -9,8 +9,8 @@ import {
   DashboardOutlined,
   GoldOutlined,
   HomeOutlined,
-  TransactionOutlined,
   WarningOutlined,
+  LineChartOutlined,
   TeamOutlined,
   WalletOutlined
 } from '@ant-design/icons';
@@ -22,7 +22,7 @@ const icons = {
   dashboard: DashboardOutlined,
   components: GoldOutlined,
   home: HomeOutlined,
-  transactions: TransactionOutlined,
+  transactions: LineChartOutlined,
   payOut: WalletOutlined,
   massPayOut: TeamOutlined,
   disputes: WarningOutlined
