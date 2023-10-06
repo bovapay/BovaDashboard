@@ -50,6 +50,18 @@ const Palette = (mode: ThemeMode, presetColor: PresetColor) => {
         white: '#fff'
       },
       ...paletteColor,
+      error: {
+        main: '#FF4D4F',
+        lighter: '#FFF1F0'
+      },
+      success: {
+        main: '#52C41A',
+        lighter: '#F6FFED'
+      },
+      info: {
+        main: '#1890FF',
+        lighter: '#E6F7FF'
+      },
       text: {
         primary: mode === ThemeMode.DARK ? alpha(paletteColor.grey[900]!, 0.87) : paletteColor.grey[700],
         secondary: mode === ThemeMode.DARK ? alpha(paletteColor.grey[900]!, 0.45) : paletteColor.grey[500],

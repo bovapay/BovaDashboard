@@ -26,7 +26,7 @@ import Loader from 'components/Loader';
 import MainCard from 'components/MainCard';
 
 // assets
-import { ShareAltOutlined } from '@ant-design/icons';
+import { CopyOutlined } from '@ant-design/icons';
 import { transformCurrencyValue } from 'utils/transformCurrencyValue';
 import { useGetDealDisputesQuery, useGetDealQuery } from 'store/api/deals/deals.api';
 import { parseDate } from 'utils/parseDate';
@@ -48,6 +48,10 @@ const Transaction = () => {
   const componentRef: React.Ref<HTMLDivElement> = useRef(null);
 
   if (isLoading || isDisputesLoading) return <Loader />;
+
+  const handleCopyId = () => {
+    navigator.clipboard.writeText(data?.id as string);
+  };
 
   return (
     <>
@@ -75,7 +79,12 @@ const Transaction = () => {
                     <Stack direction="row" spacing={2} mb={0.5}>
                       <TransactionStatusSwitcher status={data?.state || ''} />
                     </Stack>
-                    <Typography color="secondary">{data?.id}</Typography>
+                    <Typography color="secondary">
+                      <IconButton size="small" onClick={handleCopyId}>
+                        <CopyOutlined />
+                      </IconButton>
+                      {data?.id}
+                    </Typography>
                   </Box>
                   <Box>
                     <Stack direction="row" spacing={1} justifyContent="flex-end">
